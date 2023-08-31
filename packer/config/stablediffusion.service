@@ -1,0 +1,18 @@
+[Unit]
+Description=Stable Diffusion Web UI and API
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+WorkingDirectory=/home/ubuntu/stable-diffusion-webui
+Restart=always
+RestartSec=1
+User=ubuntu
+ExecStart=/usr/bin/env bash /home/ubuntu/stable-diffusion-webui/webui.sh --api --no-gradio-queue --precision full --no-half
+StandardOutput=append:/var/log/sdwebui.log
+StandardError=append:/var/log/sdwebui.log
+
+
+[Install]
+WantedBy=multi-user.target
