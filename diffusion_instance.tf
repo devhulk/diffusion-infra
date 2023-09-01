@@ -6,9 +6,11 @@ data "hcp_packer_image" "aws-stable-diffusion" {
   region          = "us-east-2"
 }
 
-resource "aws_key_pair" "gerald_diffusion_key" {
-  key_name = "gerald-diffusion-key"
-  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCfH6EKYF8M7/AH+62MChU2cKTy9lMALtZTpzHvdW6OSlGb9bMS/vNznZ+SYsJHmrFTvgtvuAV63M7Lp/0yzYrUWrvTQe4omsM+g2ZS2xGwbR/qKEOo9otntos42icTocvuRoLSNEsI51PDv5Xw+NKOjZ3Puqb94NyzXo2YivYq1ncxt/KALoifiuKZ9mieuskURdTw4hoCJDb6cQ9OiKXYW7zvJ3e/7mhWNv+RLEbEuT+DmAdS9JEeL2u9aTxjtHbpIcMgfX3MgGdzdY/MsWptb6NgAR3n9UHWa6yBbv/pNFGmiO3l8J8PJG/KCuSQ5T76hiP3CPk/9SsP07yJm9Kt"
+// You need to populate your own keypair here and insert public key
+// if you want to ssh into the EC2 instance
+resource "aws_key_pair" "your_key_pair" {
+  key_name = ""
+  public_key = ""
 }
 
 
