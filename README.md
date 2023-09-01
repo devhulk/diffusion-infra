@@ -1,9 +1,9 @@
 # diffusion-infra (pub)
 
 ** Under Active Development **
+Using AUTOMATIC1111 Web UI
 
-Stable Diffusion enabled by AUTOMATIC1111 Web UI
-
+### Disclaimer 
 The infrastructure spun up in this repo isn't free. Consider the cost and adjust the instance type as needed.
 AWS is usually giving away free credits to new accounts so take advantage of that if you can.
 
@@ -46,5 +46,20 @@ If your new to terraform you can go through a quickstart [here](https://develope
 terraform init
 terraform plan
 terraform apply
+```
+
+### Gotchas and Logging
+
+Currently when you follow the instructions the instance is up and still installing deps. Takes a few minutes and you will get
+a Bad Gateway nginx error when you visit http://{YOUR_EC2_DNS_NAME}.
+
+Currently I'm only enabling http. If someone wants to test and submit a PR setting up lets encrpyt and nginx or something
+feel free. Otherwise I'll get to it when it becomes a problem. 
+
+If you choose to add your ssh key you can see the logs by tailing them out.
+
+```bash
+ssh -i your_key_pair.pem ubuntu@{YOUR_EC2_DNS_NAME}
+tail -f /var/log/sdwebui.log
 ```
 
