@@ -43,6 +43,10 @@ build {
   }
 
   provisioner "shell" {
+    script = "./scripts/upgrades-and-pyenv.sh"
+  }
+
+  provisioner "shell" {
     script = "./scripts/installation.sh"
   }
 
