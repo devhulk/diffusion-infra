@@ -9,7 +9,7 @@ WorkingDirectory=/home/ubuntu/stable-diffusion-webui
 Restart=always
 RestartSec=1
 User=ubuntu
-ExecStart=/home/ubuntu/.pyenv/shims/python /home/ubuntu/stable-diffusion-webui/launch.py --api --no-gradio-queue --precision full --no-half
+ExecStart=/home/ubuntu/.pyenv/shims/python /home/ubuntu/stable-diffusion-webui/launch.py --xformers --reinstall-xformers --api --no-gradio-queue --precision full --no-half
 StandardOutput=append:/var/log/sdwebui.log
 StandardError=append:/var/log/sdwebui.log
 
